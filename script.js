@@ -17,6 +17,10 @@ const answerSubmitBtn = document.getElementById("answer-submit-btn");
 const reportMessageArea = document.getElementById("report-message");
 let streak = 0;
 
+let questionTime;
+let answerTime;
+let reactionTime;
+const reactionTimeTextArea = document.getElementById("reaction-time-message");
 
 function check_nickname(name) {
     if (name.length > 0) {
@@ -41,6 +45,11 @@ function check_answer() {
             reportMessageArea.style.backgroundColor = "rgb(179, 253, 179)";
             streak += 1;
             print_info_to_page();
+            print_reaction_time(questionTime, answerTime);
+            console.log("q time: " + questionTime);
+            console.log("a time: " + answerTime);
+            console.log("r time: " + reactionTime);
+            questionTime = Date.now();
         } else {
             reportMessageArea.innerText = "Your answer was wrong!";
             reportMessageArea.style.borderColor = "red";
@@ -83,18 +92,33 @@ function print_info_to_page() {
     operationSignTextArea.innerText = operation;
 }
 
+function print_reaction_time(questionTime, answerTime) {
+    reactionTime = (answerTime - questionTime) / 1000;
+    reactionTimeTextArea.innerText = reactionTime + "s";
+    if (reactionTime < 2.5) {
+        reactionTimeTextArea.style.color = "lime";
+    } else if (reactionTime < 5) {
+        reactionTimeTextArea.style.color = "yellow";
+    } else {
+        reactionTimeTextArea.style.color = "red";
+    }
+    reactionTimeTextArea.classList.remove("hidden");
+}
+
 nickSubmitBtn.addEventListener("click", () => {
     nickname = document.getElementById("nickname-input-box").value;
     check_nickname(nickname);
 })
 
 answerSubmitBtn.addEventListener("click", () => {
+    answerTime = Date.now();
     answer = answerInputBox.value;
     check_answer(answer);
 })
 
 answerInputBox.addEventListener("keyup", (e) => {
     if(e.keyCode === 13) {
+        answerTime = Date.now();
         answer = answerInputBox.value;
         check_answer(answer);
         answerInputBox.value = "";
