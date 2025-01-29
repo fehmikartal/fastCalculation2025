@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - FastCalculation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- First Page -->
+
+    <div id="nickname-input-area" class="areas">
+        <p>Welcome to <strong>FastCalculation</strong>!</p>
+        <input type="text" id="nickname-input-box" placeholder="Enter your nickname..."> 
+        <button type="submit" id="nickname-submit-btn">Let's Start!</button>
+    </div>
+
+    <!-- Second Page -->
+
+    <div id="game-area" class="hidden">
+        <p><strong><span id="nickname-display-area"></span></strong></p>
+
+        <p class="question-area">
+            <span id="number1">XX</span> 
+            <span id="operation_sign">*</span> 
+            <span id="number2">YY</span>
+        </p>
+    
+        <div>
+            <input type="text" id="answer-box" placeholder="...">
+            <button type="submit" id="answer-submit-btn">Submit</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

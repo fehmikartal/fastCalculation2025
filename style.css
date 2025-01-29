@@ -1,0 +1,75 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;        /* x axis */
+    align-items: center;            /* y axis */
+    height: 100vh;                  /* 100vh: Ekranın %100'ü (viewport height*/
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.areas {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;         /*Elemanları dikey hizalar*/
+    gap: 13px;
+}
+
+input {
+    text-align: center;
+}
+
+#nickname-input-box {
+    height: 30px;
+    width: 25vh;
+    font-size: 15px;
+}
+
+#answer-box {
+    height: 35px;
+    width: 75px;
+    font-size: 15px;
+}
+
+button {
+    cursor: pointer;
+    transition: ease 0.2s;
+}
+
+#nickname-submit-btn {
+    background-color: rgb(235, 235, 235);
+    border: 1px rgb(138, 138, 138) solid;
+    border-radius: 5px;
+    height: 30px;
+    width: 10vh;
+}
+
+#answer-submit-btn {
+    background-color: rgb(235, 235, 235);
+    border: 1px rgb(138, 138, 138) solid;
+    border-radius: 5px;
+    height: 35px;
+    width: 75px;
+}
+
+#nickname-submit-btn:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+p {
+    margin: 0px;
+}
+
+#nickname-display-area {
+    text-decoration: underline;
+}
+
+.question-area {
+    font-size: 32pt;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
