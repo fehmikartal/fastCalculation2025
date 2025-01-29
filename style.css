@@ -69,6 +69,15 @@ p {
     font-size: 32pt;
 }
 
+#report-message {
+    border-style: solid;
+    border-radius: 3px;
+    border-color: black;
+    border-width: 3px;
+
+    padding: 5px;
+}
+
 .hidden {
     display: none;
     visibility: hidden;
